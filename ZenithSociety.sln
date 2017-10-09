@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.26730.12
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ZenithDataLib", "ZenithDataLib\ZenithDataLib.csproj", "{B1748C0D-2DB5-4A5D-9B85-2C67BC72DA32}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ZenithWebSite", "ZenithWebSite\ZenithWebSite.csproj", "{7A360DB4-8519-4B7C-875D-AD2C79801A03}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B1748C0D-2DB5-4A5D-9B85-2C67BC72DA32}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B1748C0D-2DB5-4A5D-9B85-2C67BC72DA32}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B1748C0D-2DB5-4A5D-9B85-2C67BC72DA32}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B1748C0D-2DB5-4A5D-9B85-2C67BC72DA32}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7A360DB4-8519-4B7C-875D-AD2C79801A03}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7A360DB4-8519-4B7C-875D-AD2C79801A03}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7A360DB4-8519-4B7C-875D-AD2C79801A03}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7A360DB4-8519-4B7C-875D-AD2C79801A03}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {423D992F-EC68-4F4F-82AC-02DD8D5354F9}
+	EndGlobalSection
+EndGlobal

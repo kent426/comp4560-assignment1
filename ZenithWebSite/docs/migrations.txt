@@ -1,0 +1,6 @@
+﻿enable-migrations -ContextTypeName ApplicationDbContext -ContextProjectName ZenithDataLib -ProjectName ZenithWebSite -MigrationsDirectory Migrations\Zenith
+
+add-migration -ProjectName ZenithWebSite -ConfigurationTypeName ZenithWebSite.Migrations.Zenith.Configuration "Added userNameProperties"
+
+update-database -ProjectName ZenithWebSite -ConfigurationTypeName ZenithWebSite.Migrations.Zenith.Configuration
+
