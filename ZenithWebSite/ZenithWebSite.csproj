@@ -197,15 +197,19 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\Zenith\201710150054251_Added userNameProperties.cs" />
-    <Compile Include="Migrations\Zenith\201710150054251_Added userNameProperties.Designer.cs">
-      <DependentUpon>201710150054251_Added userNameProperties.cs</DependentUpon>
+    <Compile Include="Migrations\Zenith\201710141201359_Added userNameProperties.cs" />
+    <Compile Include="Migrations\Zenith\201710141201359_Added userNameProperties.Designer.cs">
+      <DependentUpon>201710141201359_Added userNameProperties.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Zenith\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Data\ZenithSociety.mdf" />
+    <Content Include="App_Data\ZenithSociety_log.ldf">
+      <DependentUpon>ZenithSociety.mdf</DependentUpon>
+    </Content>
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="docs\migrations.txt" />
@@ -292,11 +296,8 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="App_Data\" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Migrations\Zenith\201710150054251_Added userNameProperties.resx">
-      <DependentUpon>201710150054251_Added userNameProperties.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\Zenith\201710141201359_Added userNameProperties.resx">
+      <DependentUpon>201710141201359_Added userNameProperties.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
