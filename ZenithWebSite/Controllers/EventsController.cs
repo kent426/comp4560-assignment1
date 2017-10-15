@@ -17,7 +17,7 @@ namespace ZenithWebSite.Controllers
         // GET: Events
         public ActionResult Index()
         {
-            var events = db.Events.Include(@e => @e.ActivityCategory);
+            var events = db.Events.Include(e => e.ActivityCategory);
             return View(events.ToList());
         }
 

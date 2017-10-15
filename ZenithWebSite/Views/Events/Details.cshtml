@@ -1,58 +1,51 @@
 ﻿@model ZenithDataLib.Models.Event
 
 @{
-    Layout = null;
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<!DOCTYPE html>
+<h2>Details</h2>
 
-<html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <title>Details</title>
-</head>
-<body>
-    <div>
-        <h4>Event</h4>
-        <hr />
-        <dl class="dl-horizontal">
-            <dt>
-                @Html.DisplayNameFor(model => model.ActivityCategory.ActivityDescription)
-            </dt>
-    
-            <dd>
-                @Html.DisplayFor(model => model.ActivityCategory.ActivityDescription)
-            </dd>
-    
-            <dt>
-                @Html.DisplayNameFor(model => model.EventFromDateTime)
-            </dt>
-    
-            <dd>
-                @Html.DisplayFor(model => model.EventFromDateTime)
-            </dd>
-    
-            <dt>
-                @Html.DisplayNameFor(model => model.EventToDateTime)
-            </dt>
-    
-            <dd>
-                @Html.DisplayFor(model => model.EventToDateTime)
-            </dd>
-    
-            <dt>
-                @Html.DisplayNameFor(model => model.IsActive)
-            </dt>
-    
-            <dd>
-                @Html.DisplayFor(model => model.IsActive)
-            </dd>
-    
-        </dl>
-    </div>
-    <p>
-        @Html.ActionLink("Edit", "Edit", new { id = Model.EventId }) |
-        @Html.ActionLink("Back to List", "Index")
-    </p>
-</body>
-</html>
+<div>
+    <h4>Event</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.ActivityCategory.ActivityDescription)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ActivityCategory.ActivityDescription)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EventFromDateTime)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EventFromDateTime)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EventToDateTime)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EventToDateTime)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.IsActive)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IsActive)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.EventId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
