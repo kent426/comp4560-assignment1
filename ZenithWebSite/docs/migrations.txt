@@ -4,3 +4,6 @@ add-migration -ProjectName ZenithWebSite -ConfigurationTypeName ZenithWebSite.Mi
 
 update-database -ProjectName ZenithWebSite -ConfigurationTypeName ZenithWebSite.Migrations.Zenith.Configuration
 
+add-migration -ProjectName ZenithWebSite -ConfigurationTypeName ZenithWebSite.Migrations.Zenith.Configuration "Added Fkey"
+
+

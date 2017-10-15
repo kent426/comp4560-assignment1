@@ -33,5 +33,9 @@ namespace ZenithDataLib.Models
         {
             return new ApplicationDbContext();
         }
+
+        public DbSet<Event> Events { get; set; }
+        public  DbSet<ActivityCategory> ActivityCategories { get; set; }
+
     }
 }

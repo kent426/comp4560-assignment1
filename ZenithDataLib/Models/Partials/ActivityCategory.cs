@@ -1,23 +1,27 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Web.Mvc;
 
 namespace ZenithDataLib.Models
 {
-    public partial class ActivityCategory
+
+    [MetadataType(typeof(ActivityCategoryMetaData))]
+    public partial class ActivityCategory { }
+
+    public class ActivityCategoryMetaData
     {
-        [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        [HiddenInput(DisplayValue = false)]
         public int ActivityCategoryId { get; set; }
 
+        [Required(ErrorMessage = "Activity Description is required.")]
+        [Display(Name = "Activity Description")]
         public string ActivityDescription { get; set; }
 
+        [ScaffoldColumn(false)]
         public DateTime CreationDate { get; set; }
-
-        public virtual List<Event> Events { get; set; }
     }
 }

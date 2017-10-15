@@ -8,6 +8,32 @@ namespace ZenithWebSite.Migrations.Zenith
         public override void Up()
         {
             CreateTable(
+                "dbo.ActivityCategories",
+                c => new
+                    {
+                        ActivityCategoryId = c.Int(nullable: false, identity: true),
+                        ActivityDescription = c.String(nullable: false),
+                        CreationDate = c.DateTime(nullable: false),
+                    })
+                .PrimaryKey(t => t.ActivityCategoryId);
+            
+            CreateTable(
+                "dbo.Events",
+                c => new
+                    {
+                        EventId = c.Int(nullable: false, identity: true),
+                        EventFromDateTime = c.DateTime(nullable: false),
+                        EventToDateTime = c.DateTime(nullable: false),
+                        EnteredByUsername = c.String(),
+                        CreationDate = c.DateTime(nullable: false),
+                        IsActive = c.Boolean(nullable: false),
+                        ActivityCategoryId = c.Int(nullable: false),
+                    })
+                .PrimaryKey(t => t.EventId)
+                .ForeignKey("dbo.ActivityCategories", t => t.ActivityCategoryId, cascadeDelete: true)
+                .Index(t => t.ActivityCategoryId);
+            
+            CreateTable(
                 "dbo.AspNetRoles",
                 c => new
                     {
@@ -85,17 +111,21 @@ namespace ZenithWebSite.Migrations.Zenith
             DropForeignKey("dbo.AspNetUserLogins", "UserId", "dbo.AspNetUsers");
             DropForeignKey("dbo.AspNetUserClaims", "UserId", "dbo.AspNetUsers");
             DropForeignKey("dbo.AspNetUserRoles", "RoleId", "dbo.AspNetRoles");
+            DropForeignKey("dbo.Events", "ActivityCategoryId", "dbo.ActivityCategories");
             DropIndex("dbo.AspNetUserLogins", new[] { "UserId" });
             DropIndex("dbo.AspNetUserClaims", new[] { "UserId" });
             DropIndex("dbo.AspNetUsers", "UserNameIndex");
             DropIndex("dbo.AspNetUserRoles", new[] { "RoleId" });
             DropIndex("dbo.AspNetUserRoles", new[] { "UserId" });
             DropIndex("dbo.AspNetRoles", "RoleNameIndex");
+            DropIndex("dbo.Events", new[] { "ActivityCategoryId" });
             DropTable("dbo.AspNetUserLogins");
             DropTable("dbo.AspNetUserClaims");
             DropTable("dbo.AspNetUsers");
             DropTable("dbo.AspNetUserRoles");
             DropTable("dbo.AspNetRoles");
+            DropTable("dbo.Events");
+            DropTable("dbo.ActivityCategories");
         }
     }
 }

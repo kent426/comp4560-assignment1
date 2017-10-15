@@ -13,7 +13,7 @@ namespace ZenithWebSite.Migrations.Zenith
         
         string IMigrationMetadata.Id
         {
-            get { return "201710090708048_Added userNameProperties"; }
+            get { return "201710150054251_Added userNameProperties"; }
         }
         
         string IMigrationMetadata.Source
