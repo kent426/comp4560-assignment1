@@ -3,15 +3,21 @@
 @{
     ViewBag.Title = "Home Page";
 }
+<h2>@ViewBag.Message</h2>
 
-<table style="width:500px;
-  margin: 10px auto;border-collapse: collapse;border: 1px solid black;">
-    <tr style="margin: auto" >
-        <th colspan="2" style="border: 1px solid black;width:100%;text-align:center;background-color:aqua">Tuesday October 17, 2017</th>
+
+<table style="width:800px; margin: 10px auto;border-collapse: collapse;border: 1px solid black;">
+    @foreach (var item in Model) { 
+        <tr style="margin: auto" >
+            <th colspan="2" style="border: 1px solid black;width:100%;text-align:center;background-color:aqua">@item.EventFromDateTime.DayOfWeek, @item.EventFromDateTime.ToShortDateString()</th>
         
-    </tr>
-    <tr style="margin: auto">
-        <td style="border: 1px solid black;text-align:center;width:50%">8:30 AM - 10:30 AM</td>
-        <td style="text-align:center;width:50%">Senior’s Golf Tournament</td>
-    </tr>
+        </tr>
+        <tr style="margin: auto">
+            <tr>
+                <td style="border: 1px solid black;text-align:center;width:30%"> @item.EventFromDateTime.ToShortTimeString() - @item.EventToDateTime.ToShortTimeString()</td>
+                <td style="padding-left:5px;width:70%">@item.ActivityCategory.ActivityDescription</td>
+            </tr>
+       </tr>
+    }
+
 </table>
