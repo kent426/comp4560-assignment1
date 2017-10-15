@@ -5,11 +5,14 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Index</h2>
+<h2>Event</h2>
 
+@if (User.IsInRole("Admin"))
+{
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("Create New Event", "Create")
 </p>
+}
 <table class="table">
     <tr>
         <th>
@@ -21,6 +24,8 @@
         <th>
             @Html.DisplayNameFor(model => model.EventToDateTime)
         </th>
+@if (User.IsInRole("Admin"))
+{
         <th>
             @Html.DisplayNameFor(model => model.EnteredByUsername)
         </th>
@@ -30,6 +35,7 @@
         <th>
             @Html.DisplayNameFor(model => model.IsActive)
         </th>
+}
         <th></th>
     </tr>
 
@@ -44,6 +50,8 @@
         <td>
             @Html.DisplayFor(modelItem => item.EventToDateTime)
         </td>
+@if (User.IsInRole("Admin"))
+{
         <td>
             @Html.DisplayFor(modelItem => item.EnteredByUsername)
         </td>
@@ -54,10 +62,11 @@
             @Html.DisplayFor(modelItem => item.IsActive)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.EventId }) |
-            @Html.ActionLink("Details", "Details", new { id=item.EventId }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.EventId })
+            @Html.ActionLink("Edit", "Edit", new { id = item.EventId }) |
+            @Html.ActionLink("Details", "Details", new { id = item.EventId }) |
+            @Html.ActionLink("Delete", "Delete", new { id = item.EventId })
         </td>
+}
     </tr>
 }
 

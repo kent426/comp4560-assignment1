@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 
 namespace ZenithDataLib.Models
 {
+
     public partial class Event
     {
 

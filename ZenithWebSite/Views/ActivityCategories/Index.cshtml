@@ -1,23 +1,29 @@
 ﻿@model IEnumerable<ZenithDataLib.Models.ActivityCategory>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Activity Category";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Index</h2>
-
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
+<h2>Category</h2>
+@if (User.IsInRole("Admin"))
+{
+    <p>
+        @Html.ActionLink("Create New Category", "Create")
+    </p>
+}
 <table class="table">
     <tr>
         <th>
             @Html.DisplayNameFor(model => model.ActivityDescription)
         </th>
+
+@if (User.IsInRole("Admin"))
+{
         <th>
             @Html.DisplayNameFor(model => model.CreationDate)
         </th>
+}
         <th></th>
     </tr>
 
@@ -26,14 +32,19 @@
         <td>
             @Html.DisplayFor(modelItem => item.ActivityDescription)
         </td>
+
+
+    @if (User.IsInRole("Admin"))
+    {
         <td>
             @Html.DisplayFor(modelItem => item.CreationDate)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.ActivityCategoryId }) |
-            @Html.ActionLink("Details", "Details", new { id=item.ActivityCategoryId }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.ActivityCategoryId })
+            @Html.ActionLink("Edit", "Edit", new { id = item.ActivityCategoryId }) |
+            @Html.ActionLink("Details", "Details", new { id = item.ActivityCategoryId }) |
+            @Html.ActionLink("Delete", "Delete", new { id = item.ActivityCategoryId })
         </td>
+    }
     </tr>
 }
 

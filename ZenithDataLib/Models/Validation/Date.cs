@@ -24,7 +24,7 @@ namespace ZenithDataLib.Models
             else if (eventFrom >= eventTo)
             {
                 return new ValidationResult
-                    ("Event-From Date should be less than Event-To Date");
+                    ("Event-From time should be less than Event-To time");
             }
             else
             {

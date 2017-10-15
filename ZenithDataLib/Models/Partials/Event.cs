@@ -22,7 +22,7 @@ namespace ZenithDataLib.Models
         public DateTime EventFromDateTime { get; set; }
 
         [Required(ErrorMessage = "Event end date is required.")]
-        [Display(Name = "Event From")]
+        [Display(Name = "Event To")]
         public DateTime EventToDateTime { get; set; }
 
         [ScaffoldColumn(false)]

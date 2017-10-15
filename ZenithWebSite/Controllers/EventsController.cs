@@ -11,10 +11,12 @@ using ZenithDataLib.Models;
 
 namespace ZenithWebSite.Controllers
 {
+    [Authorize]
     public class EventsController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();
 
+        [Authorize]
         // GET: Events
         public ActionResult Index()
         {
@@ -22,6 +24,7 @@ namespace ZenithWebSite.Controllers
             return View(events.ToList());
         }
 
+        [Authorize(Roles = "Admin")]
         // GET: Events/Details/5
         public ActionResult Details(int? id)
         {
@@ -37,6 +40,7 @@ namespace ZenithWebSite.Controllers
             return View(@event);
         }
 
+        [Authorize(Roles = "Admin")]
         // GET: Events/Create
         public ActionResult Create()
         {
@@ -44,6 +48,7 @@ namespace ZenithWebSite.Controllers
             return View();
         }
 
+        [Authorize(Roles = "Admin")]
         // POST: Events/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
@@ -65,6 +70,7 @@ namespace ZenithWebSite.Controllers
             return View(@event);
         }
 
+        [Authorize(Roles = "Admin")]
         // GET: Events/Edit/5
         public ActionResult Edit(int? id)
         {
@@ -81,6 +87,7 @@ namespace ZenithWebSite.Controllers
             return View(@event);
         }
 
+        [Authorize(Roles = "Admin")]
         // POST: Events/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
@@ -100,6 +107,7 @@ namespace ZenithWebSite.Controllers
             return View(@event);
         }
 
+        [Authorize(Roles = "Admin")]
         // GET: Events/Delete/5
         public ActionResult Delete(int? id)
         {
@@ -115,6 +123,7 @@ namespace ZenithWebSite.Controllers
             return View(@event);
         }
 
+        [Authorize(Roles = "Admin")]
         // POST: Events/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
@@ -126,6 +135,7 @@ namespace ZenithWebSite.Controllers
             return RedirectToAction("Index");
         }
 
+        [Authorize(Roles = "Admin")]
         protected override void Dispose(bool disposing)
         {
             if (disposing)
