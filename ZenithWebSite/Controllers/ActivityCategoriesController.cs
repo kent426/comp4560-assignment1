@@ -46,8 +46,9 @@ namespace ZenithWebSite.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "ActivityCategoryId,ActivityDescription,CreationDate")] ActivityCategory activityCategory)
+        public ActionResult Create([Bind(Include = "ActivityCategoryId,ActivityDescription")] ActivityCategory activityCategory)
         {
+            activityCategory.CreationDate = DateTime.Now;
             if (ModelState.IsValid)
             {
                 db.ActivityCategories.Add(activityCategory);
@@ -78,8 +79,9 @@ namespace ZenithWebSite.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "ActivityCategoryId,ActivityDescription,CreationDate")] ActivityCategory activityCategory)
+        public ActionResult Edit([Bind(Include = "ActivityCategoryId,ActivityDescription")] ActivityCategory activityCategory)
         {
+            activityCategory.CreationDate = DateTime.Now;
             if (ModelState.IsValid)
             {
                 db.Entry(activityCategory).State = EntityState.Modified;

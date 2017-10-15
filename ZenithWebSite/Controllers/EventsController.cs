@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.AspNet.Identity;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;
@@ -48,8 +49,11 @@ namespace ZenithWebSite.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "EventId,EventFromDateTime,EventToDateTime,EnteredByUsername,CreationDate,IsActive,ActivityCategoryId")] Event @event)
+        public ActionResult Create([Bind(Include = "EventId,EventFromDateTime,EventToDateTime,IsActive,ActivityCategoryId")] Event @event)
         {
+            @event.CreationDate = DateTime.Now;
+            
+            @event.EnteredByUsername = User.Identity.GetUserName();
             if (ModelState.IsValid)
             {
                 db.Events.Add(@event);
@@ -82,8 +86,10 @@ namespace ZenithWebSite.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "EventId,EventFromDateTime,EventToDateTime,EnteredByUsername,CreationDate,IsActive,ActivityCategoryId")] Event @event)
+        public ActionResult Edit([Bind(Include = "EventId,EventFromDateTime,EventToDateTime,IsActive,ActivityCategoryId")] Event @event)
         {
+            @event.CreationDate = DateTime.Now;
+            @event.EnteredByUsername = User.Identity.GetUserName();
             if (ModelState.IsValid)
             {
                 db.Entry(@event).State = EntityState.Modified;

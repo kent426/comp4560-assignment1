@@ -7,13 +7,13 @@ namespace ZenithWebSite.Migrations.Zenith
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.3-40302")]
-    public sealed partial class AddeduserNameProperties : IMigrationMetadata
+    public sealed partial class Added : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(AddeduserNameProperties));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(Added));
         
         string IMigrationMetadata.Id
         {
-            get { return "201710150054251_Added userNameProperties"; }
+            get { return "201710150621091_Added"; }
         }
         
         string IMigrationMetadata.Source

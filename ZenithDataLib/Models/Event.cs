@@ -15,6 +15,7 @@ namespace ZenithDataLib.Models
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int EventId { get; set; }
 
+        [ValidDate]
         public DateTime EventFromDateTime { get; set; }
         public DateTime EventToDateTime { get; set; }
         public String EnteredByUsername { get; set; }

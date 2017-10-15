@@ -3,7 +3,7 @@ namespace ZenithWebSite.Migrations.Zenith
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class AddeduserNameProperties : DbMigration
+    public partial class Added : DbMigration
     {
         public override void Up()
         {

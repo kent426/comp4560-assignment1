@@ -86,6 +86,7 @@
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\Partials\ActivityCategory.cs" />
     <Compile Include="Models\Partials\Event.cs" />
+    <Compile Include="Models\Validation\Date.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
