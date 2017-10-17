@@ -38,7 +38,7 @@ namespace ZenithWebSite.Controllers
             {
                 var thisday = monday.AddDays(x).Date;
                 var eventsInDay = db.Events.Include(e => e.ActivityCategory)
-                                    .Where(e => DbFunctions.TruncateTime(e.EventFromDateTime) == thisday).ToList();
+                                    .Where(e =>( DbFunctions.TruncateTime(e.EventFromDateTime) == thisday && e.IsActive == true)).ToList();
                 eventsInDay.Sort((i, j) => DateTime.Compare(i.EventFromDateTime, j.EventFromDateTime));
                 eventsForAWeek.Add(thisday, eventsInDay);
             }
