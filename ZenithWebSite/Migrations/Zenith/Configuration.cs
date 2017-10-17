@@ -184,7 +184,7 @@ namespace ZenithWebSite.Migrations.Zenith
                  },
                   new Event()
                 {
-                    EventFromDateTime= new DateTime(2017,10,21,7,30,0),
+                    EventFromDateTime= new DateTime(2017,10,21,7,00,0),
                     EventToDateTime = new DateTime(2017,10,21,8,00,0),
                     EnteredByUsername = "someone",
                     CreationDate = new DateTime(2017,10,15,8,00,0),

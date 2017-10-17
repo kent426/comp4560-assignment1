@@ -1,17 +1,28 @@
-﻿@model List<ZenithDataLib.Models.Event>
+﻿@model Dictionary<DateTime, List<ZenithDataLib.Models.Event>>
 
 @{
     ViewBag.Title = "Home Page";
+    @Styles.Render("~/Content/Home-table.css")
 }
 
-<table style="width:500px;
-  margin: 10px auto;border-collapse: collapse;border: 1px solid black;">
-    <tr style="margin: auto" >
-        <th colspan="2" style="border: 1px solid black;width:100%;text-align:center;background-color:aqua">Tuesday October 17, 2017</th>
-        
-    </tr>
-    <tr style="margin: auto">
-        <td style="border: 1px solid black;text-align:center;width:50%">8:30 AM - 10:30 AM</td>
-        <td style="text-align:center;width:50%">Senior’s Golf Tournament</td>
-    </tr>
+<table>
+    @foreach (var onedayToEvents in Model)
+    {
+
+        if (onedayToEvents.Value.Count != 0)
+        {
+            <tr>
+                <th colspan="2">@onedayToEvents.Key.ToString("dddd MMMM dd yyyy")</th>
+            </tr>
+            foreach (var oneevent in onedayToEvents.Value as List<ZenithDataLib.Models.Event>)
+            {
+            <tr>
+                <td>@oneevent.EventFromDateTime.ToShortTimeString() - @oneevent.EventToDateTime.ToShortTimeString()</td>
+                <td>@oneevent.ActivityCategory.ActivityDescription</td>
+            </tr>
+        }
+    }
+
+
+    }
 </table>
