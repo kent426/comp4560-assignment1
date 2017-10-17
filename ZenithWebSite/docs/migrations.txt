@@ -1,9 +1,9 @@
 ﻿enable-migrations -ContextTypeName ApplicationDbContext -ContextProjectName ZenithDataLib -ProjectName ZenithWebSite -MigrationsDirectory Migrations\Zenith
 
-add-migration -ProjectName ZenithWebSite -ConfigurationTypeName ZenithWebSite.Migrations.Zenith.Configuration "Added userNameProperties"
+add-migration -ProjectName ZenithWebSite -ConfigurationTypeName ZenithWebSite.Migrations.Zenith.Configuration "Added"
 
 update-database -ProjectName ZenithWebSite -ConfigurationTypeName ZenithWebSite.Migrations.Zenith.Configuration
 
-add-migration -ProjectName ZenithWebSite -ConfigurationTypeName ZenithWebSite.Migrations.Zenith.Configuration "Added Fkey"
+
 
 

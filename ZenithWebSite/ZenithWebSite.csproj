@@ -197,9 +197,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\Zenith\201710150621091_Added.cs" />
-    <Compile Include="Migrations\Zenith\201710150621091_Added.Designer.cs">
-      <DependentUpon>201710150621091_Added.cs</DependentUpon>
+    <Compile Include="Migrations\Zenith\201710170048219_Added.cs" />
+    <Compile Include="Migrations\Zenith\201710170048219_Added.Designer.cs">
+      <DependentUpon>201710170048219_Added.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Zenith\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -296,10 +296,9 @@
       <Name>ZenithDataLib</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\Zenith\201710150621091_Added.resx">
-      <DependentUpon>201710150621091_Added.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\Zenith\201710170048219_Added.resx">
+      <DependentUpon>201710170048219_Added.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
