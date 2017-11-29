@@ -58,12 +58,6 @@ namespace ass2.Data.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Event", x => x.EventId);
-                    table.ForeignKey(
-                        name: "FK_Event_ActivityCategory_ActivityCategoryId",
-                        column: x => x.ActivityCategoryId,
-                        principalTable: "ActivityCategory",
-                        principalColumn: "ActivityCategoryId",
-                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateIndex(
@@ -77,20 +71,10 @@ namespace ass2.Data.Migrations
                 table: "Event",
                 column: "ActivityCategoryId");
 
-            migrationBuilder.AddForeignKey(
-                name: "FK_AspNetUserTokens_AspNetUsers_UserId",
-                table: "AspNetUserTokens",
-                column: "UserId",
-                principalTable: "AspNetUsers",
-                principalColumn: "Id",
-                onDelete: ReferentialAction.Cascade);
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
         {
-            migrationBuilder.DropForeignKey(
-                name: "FK_AspNetUserTokens_AspNetUsers_UserId",
-                table: "AspNetUserTokens");
 
             migrationBuilder.DropTable(
                 name: "Event");
