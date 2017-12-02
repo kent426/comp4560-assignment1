@@ -37,6 +37,7 @@ namespace ass2.Models
         public bool IsActive { get; set; }
 
         [ForeignKey("ActivityCategoryId")]
+        [Display(Name = "Activity Description")]
         public virtual ActivityCategory ActivityCategory { get; set; }
 
         public virtual int ActivityCategoryId { get; set; }

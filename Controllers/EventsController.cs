@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using ass2.Data;
 using ass2.Models;
+using Microsoft.AspNetCore.Authorization;
 
 namespace ass2.Controllers
 {
@@ -45,6 +46,7 @@ namespace ass2.Controllers
             return View(@event);
         }
 
+        [Authorize(Roles = "Admin")]
         // GET: Events/Create
         public IActionResult Create()
         {
@@ -52,6 +54,8 @@ namespace ass2.Controllers
             return View();
         }
 
+
+        [Authorize(Roles = "Admin")]
         // POST: Events/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
@@ -59,6 +63,8 @@ namespace ass2.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("EventId,EventFromDateTime,EventToDateTime,IsActive,ActivityCategoryId")] Event @event)
         {
+            @event.CreationDate = DateTime.Now;
+            @event.EnteredByUsername = User.Identity.Name;
             if (ModelState.IsValid)
             {
                 _context.Add(@event);
@@ -69,6 +75,7 @@ namespace ass2.Controllers
             return View(@event);
         }
 
+        [Authorize(Roles = "Admin")]
         // GET: Events/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
@@ -86,6 +93,7 @@ namespace ass2.Controllers
             return View(@event);
         }
 
+        [Authorize(Roles = "Admin")]
         // POST: Events/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
@@ -93,6 +101,8 @@ namespace ass2.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int id, [Bind("EventId,EventFromDateTime,EventToDateTime,IsActive,ActivityCategoryId")] Event @event)
         {
+            @event.CreationDate = DateTime.Now;
+            @event.EnteredByUsername = User.Identity.Name;
             if (id != @event.EventId)
             {
                 return NotFound();
@@ -122,6 +132,7 @@ namespace ass2.Controllers
             return View(@event);
         }
 
+        [Authorize(Roles = "Admin")]
         // GET: Events/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
@@ -141,6 +152,7 @@ namespace ass2.Controllers
             return View(@event);
         }
 
+        [Authorize(Roles = "Admin")]
         // POST: Events/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]

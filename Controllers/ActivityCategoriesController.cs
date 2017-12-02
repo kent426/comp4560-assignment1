@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using ass2.Data;
 using ass2.Models;
+using Microsoft.AspNetCore.Authorization;
 
 namespace ass2.Controllers
 {
@@ -43,12 +44,14 @@ namespace ass2.Controllers
             return View(activityCategory);
         }
 
+        [Authorize(Roles = "Admin")]
         // GET: ActivityCategories/Create
         public IActionResult Create()
         {
             return View();
         }
 
+        [Authorize(Roles = "Admin")]
         // POST: ActivityCategories/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
@@ -56,6 +59,7 @@ namespace ass2.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("ActivityCategoryId,ActivityDescription")] ActivityCategory activityCategory)
         {
+            activityCategory.CreationDate = DateTime.Now;
             if (ModelState.IsValid)
             {
                 _context.Add(activityCategory);
@@ -65,6 +69,7 @@ namespace ass2.Controllers
             return View(activityCategory);
         }
 
+        [Authorize(Roles = "Admin")]
         // GET: ActivityCategories/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
@@ -81,6 +86,7 @@ namespace ass2.Controllers
             return View(activityCategory);
         }
 
+        [Authorize(Roles = "Admin")]
         // POST: ActivityCategories/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
@@ -88,6 +94,7 @@ namespace ass2.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int id, [Bind("ActivityCategoryId,ActivityDescription")] ActivityCategory activityCategory)
         {
+            activityCategory.CreationDate = DateTime.Now;
             if (id != activityCategory.ActivityCategoryId)
             {
                 return NotFound();
@@ -116,6 +123,7 @@ namespace ass2.Controllers
             return View(activityCategory);
         }
 
+        [Authorize(Roles = "Admin")]
         // GET: ActivityCategories/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
@@ -134,6 +142,7 @@ namespace ass2.Controllers
             return View(activityCategory);
         }
 
+        [Authorize(Roles = "Admin")]
         // POST: ActivityCategories/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
