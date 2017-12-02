@@ -222,6 +222,7 @@ namespace ass2.Controllers
             {
                 var user = new ApplicationUser { UserName = model.UserName, Email = model.Email,FirstName = model.FirstName,LastName = model.LastName };
                 var result = await _userManager.CreateAsync(user, model.Password);
+                var result2 = await _userManager.AddToRoleAsync(await _userManager.FindByNameAsync(model.UserName), "Member");
                 if (result.Succeeded)
                 {
                     _logger.LogInformation("User created a new account with password.");

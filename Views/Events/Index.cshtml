@@ -4,11 +4,13 @@
     ViewData["Title"] = "Index";
 }
 
-<h2>Index</h2>
-
+<h2>Events</h2>
+@if (User.IsInRole("Admin"))
+{
 <p>
     <a asp-action="Create">Create New</a>
 </p>
+}
 <table class="table">
     <thead>
         <tr>
@@ -18,20 +20,23 @@
                 <th>
                     @Html.DisplayNameFor(model => model.EventToDateTime)
                 </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.IsActive)
-                </th>
+
             <th>
                 @Html.DisplayNameFor(model => model.ActivityCategory)
+            </th>
+@if (User.IsInRole("Admin"))
+{
+            <th>
+                @Html.DisplayNameFor(model => model.IsActive)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.EnteredByUsername)
             </th>
-            
+
             <th>
                 @Html.DisplayNameFor(model => model.CreationDate)
             </th>
-            
+}
             <th></th>
         </tr>
     </thead>
@@ -44,11 +49,14 @@
             <td>
                 @Html.DisplayFor(modelItem => item.EventToDateTime)
             </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.IsActive)
-            </td>
+            
             <td>
                 @Html.DisplayFor(modelItem => item.ActivityCategory.ActivityDescription)
+            </td>
+@if (User.IsInRole("Admin"))
+{
+            <td>
+                @Html.DisplayFor(modelItem => item.IsActive)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.EnteredByUsername)
@@ -56,11 +64,13 @@
             <td>
                 @Html.DisplayFor(modelItem => item.CreationDate)
             </td>
+
             <td>
                 <a asp-action="Edit" asp-route-id="@item.EventId">Edit</a> |
                 <a asp-action="Details" asp-route-id="@item.EventId">Details</a> |
                 <a asp-action="Delete" asp-route-id="@item.EventId">Delete</a>
             </td>
+}
         </tr>
 }
     </tbody>

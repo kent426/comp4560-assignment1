@@ -28,7 +28,7 @@ namespace ass2.Models
                 string password = "P@$$w0rd";
                 string username = "a";
                 await userManager.CreateAsync(new ApplicationUser { UserName = username, Email = user, EmailConfirmed = true }, password);
-                await userManager.AddToRoleAsync(await userManager.FindByNameAsync(user), "Admin");
+                await userManager.AddToRoleAsync(await userManager.FindByNameAsync(username), "Admin");
             }
 
             //If there is already an Administrator role, abort
@@ -43,7 +43,7 @@ namespace ass2.Models
                 string mpassword = "P@$$w0rd";
                 string musername = "m";
                 await userManager.CreateAsync(new ApplicationUser { UserName = musername, Email = muser, EmailConfirmed = true }, mpassword);
-                await userManager.AddToRoleAsync(await userManager.FindByNameAsync(muser), "Member");
+                await userManager.AddToRoleAsync(await userManager.FindByNameAsync(musername), "Member");
 
 
             }

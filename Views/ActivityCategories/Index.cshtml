@@ -4,20 +4,25 @@
     ViewData["Title"] = "Index";
 }
 
-<h2>Category</h2>
-
+<h2>Categories</h2>
+@if (User.IsInRole("Admin"))
+{
 <p>
     <a asp-action="Create">Create New</a>
 </p>
+}
 <table class="table">
     <thead>
         <tr>
                 <th>
                     @Html.DisplayNameFor(model => model.ActivityDescription)
                 </th>
+@if (User.IsInRole("Admin"))
+{
             <th>
                 @Html.DisplayNameFor(model => model.CreationDate)
             </th>
+}
             <th></th>
         </tr>
     </thead>
@@ -27,6 +32,8 @@
             <td>
                 @Html.DisplayFor(modelItem => item.ActivityDescription)
             </td>
+@if (User.IsInRole("Admin"))
+{
             <td>
                 @Html.DisplayFor(modelItem => item.CreationDate)
             </td>
@@ -35,6 +42,7 @@
                 <a asp-action="Details" asp-route-id="@item.ActivityCategoryId">Details</a> |
                 <a asp-action="Delete" asp-route-id="@item.ActivityCategoryId">Delete</a>
             </td>
+}
         </tr>
 }
     </tbody>
