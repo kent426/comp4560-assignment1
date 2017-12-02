@@ -1,3 +1,28 @@
-﻿@{
+﻿@model Dictionary<DateTime, List<ass2.Models.Event>>
+
+@{
     ViewData["Title"] = "Home Page";
+    <link rel="stylesheet" href="~/css/Home-table.css" />
 }
+
+<table>
+    @foreach (var onedayToEvents in Model)
+    {
+
+        if (onedayToEvents.Value.Count != 0)
+        {
+            <tr>
+                <th colspan="2">@onedayToEvents.Key.ToString("dddd MMMM dd yyyy")</th>
+            </tr>
+            foreach (var oneevent in onedayToEvents.Value as List<ass2.Models.Event>)
+            {
+                <tr>
+                    <td>@oneevent.EventFromDateTime.ToShortTimeString() - @oneevent.EventToDateTime.ToShortTimeString()</td>
+                    <td>@oneevent.ActivityCategory.ActivityDescription</td>
+                </tr>
+            }
+        }
+
+
+    }
+</table>
