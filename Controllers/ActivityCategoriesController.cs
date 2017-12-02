@@ -54,7 +54,7 @@ namespace ass2.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("ActivityCategoryId,ActivityDescription,CreationDate")] ActivityCategory activityCategory)
+        public async Task<IActionResult> Create([Bind("ActivityCategoryId,ActivityDescription")] ActivityCategory activityCategory)
         {
             if (ModelState.IsValid)
             {
@@ -86,7 +86,7 @@ namespace ass2.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("ActivityCategoryId,ActivityDescription,CreationDate")] ActivityCategory activityCategory)
+        public async Task<IActionResult> Edit(int id, [Bind("ActivityCategoryId,ActivityDescription")] ActivityCategory activityCategory)
         {
             if (id != activityCategory.ActivityCategoryId)
             {

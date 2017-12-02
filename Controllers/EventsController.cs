@@ -48,7 +48,7 @@ namespace ass2.Controllers
         // GET: Events/Create
         public IActionResult Create()
         {
-            ViewData["ActivityCategoryId"] = new SelectList(_context.ActivityCategories, "ActivityCategoryId", "ActivityCategoryId");
+            ViewData["ActivityCategoryId"] = new SelectList(_context.ActivityCategories, "ActivityCategoryId", "ActivityDescription");
             return View();
         }
 
@@ -57,7 +57,7 @@ namespace ass2.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("EventId,EventFromDateTime,EventToDateTime,EnteredByUsername,CreationDate,IsActive,ActivityCategoryId")] Event @event)
+        public async Task<IActionResult> Create([Bind("EventId,EventFromDateTime,EventToDateTime,IsActive,ActivityCategoryId")] Event @event)
         {
             if (ModelState.IsValid)
             {
@@ -65,7 +65,7 @@ namespace ass2.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["ActivityCategoryId"] = new SelectList(_context.ActivityCategories, "ActivityCategoryId", "ActivityCategoryId", @event.ActivityCategoryId);
+            ViewData["ActivityCategoryId"] = new SelectList(_context.ActivityCategories, "ActivityCategoryId", "ActivityDescription", @event.ActivityCategoryId);
             return View(@event);
         }
 
@@ -82,7 +82,7 @@ namespace ass2.Controllers
             {
                 return NotFound();
             }
-            ViewData["ActivityCategoryId"] = new SelectList(_context.ActivityCategories, "ActivityCategoryId", "ActivityCategoryId", @event.ActivityCategoryId);
+            ViewData["ActivityCategoryId"] = new SelectList(_context.ActivityCategories, "ActivityCategoryId", "ActivityDescription", @event.ActivityCategoryId);
             return View(@event);
         }
 
@@ -91,7 +91,7 @@ namespace ass2.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("EventId,EventFromDateTime,EventToDateTime,EnteredByUsername,CreationDate,IsActive,ActivityCategoryId")] Event @event)
+        public async Task<IActionResult> Edit(int id, [Bind("EventId,EventFromDateTime,EventToDateTime,IsActive,ActivityCategoryId")] Event @event)
         {
             if (id != @event.EventId)
             {
@@ -118,7 +118,7 @@ namespace ass2.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["ActivityCategoryId"] = new SelectList(_context.ActivityCategories, "ActivityCategoryId", "ActivityCategoryId", @event.ActivityCategoryId);
+            ViewData["ActivityCategoryId"] = new SelectList(_context.ActivityCategories, "ActivityCategoryId", "ActivityDescription", @event.ActivityCategoryId);
             return View(@event);
         }
 

@@ -30,7 +30,7 @@ namespace ass2
                     var roleManager = services.GetRequiredService<RoleManager<IdentityRole>>();
 
                     var dbInitializerLogger = services.GetRequiredService<ILogger<DbInitializer>>();
-                    DbInitializer.Initialize(context, userManager, roleManager, dbInitializerLogger);
+                    DbInitializer.Initialize(context, userManager, roleManager, dbInitializerLogger).Wait();
                 }
                 catch (Exception ex)
                 {

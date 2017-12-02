@@ -19,12 +19,6 @@
                     @Html.DisplayNameFor(model => model.EventToDateTime)
                 </th>
                 <th>
-                    @Html.DisplayNameFor(model => model.EnteredByUsername)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.CreationDate)
-                </th>
-                <th>
                     @Html.DisplayNameFor(model => model.IsActive)
                 </th>
             <th>
@@ -43,16 +37,10 @@
                 @Html.DisplayFor(modelItem => item.EventToDateTime)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.EnteredByUsername)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.CreationDate)
-            </td>
-            <td>
                 @Html.DisplayFor(modelItem => item.IsActive)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.ActivityCategory.ActivityCategoryId)
+                @Html.DisplayFor(modelItem => item.ActivityCategory.ActivityDescription)
             </td>
             <td>
                 <a asp-action="Edit" asp-route-id="@item.EventId">Edit</a> |
