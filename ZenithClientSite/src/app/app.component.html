@@ -1,1 +1,22 @@
-{{events}}
+<div>
+	<h1> Here are the Evnets</h1>
+	<table border="1" class="table">
+		<thead>
+			<tr>
+		<th>eventFromDateTime</th>
+		<th>eventToDateTime</th>
+		<th>activityCategoryId</th>
+	</tr>
+		</thead>
+		<tbody>
+		<tr *ngFor="let e of events">
+			<td>{{e.eventFromDateTime}} </td>
+			<td>{{e.eventToDateTime}}</td>
+			<td>{{e.activityCategoryId}}</td>
+
+		</tr>
+		</tbody>
+
+	</table>
+</div>
+

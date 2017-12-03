@@ -1,6 +1,12 @@
 export class Event {
+	eventId: string;
 	eventFromDateTime: Date;
-	eventToDateTime	: Date;
-	activityCategoryId: number;
+	eventToDateTime: Date;
+	enteredByUsername: string;
+	creationDate: string;
+	isActive: string;
+	activityCategory: string;
+	activityCategoryId: string;
+	avtivityDes:string;
 
 }

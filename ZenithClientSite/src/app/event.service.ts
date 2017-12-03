@@ -12,7 +12,7 @@ export class EventService {
 	private base_url ="http://zenithnetcore.azurewebsites.net/api/Events";
   constructor(public _http:Http) { }
 
-  events;
+
   getEvents(): Promise<Event[]> {
   	return this._http.get(this.base_url)
   	.toPromise()
