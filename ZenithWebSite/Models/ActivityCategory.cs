@@ -24,6 +24,6 @@ namespace ass2.Models
         [ScaffoldColumn(false)]
         public DateTime CreationDate { get; set; }
 
-        public virtual List<Event> Events { get; set; }
+        //public virtual List<Event> Events { get; set; }
     }
 }

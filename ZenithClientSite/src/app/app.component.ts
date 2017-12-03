@@ -1,6 +1,7 @@
 import { Component,OnInit } from '@angular/core';
 import {Event} from './event';
 import {EventService} from './event.service';
+import {ActivityCategory} from './activity-category';
 
 @Component({
   selector: 'app-root',

@@ -25,7 +25,8 @@ namespace ass2.Controllers
         [HttpGet]
         public IEnumerable<Event> GetEvents()
         {
-            return _context.Events;
+            
+            return _context.Events.Include(e => e.ActivityCategory).ToList();
         }
 
         // GET: api/EventsApi/5
