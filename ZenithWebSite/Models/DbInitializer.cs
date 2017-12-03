@@ -53,7 +53,7 @@ namespace ass2.Models
                 new ActivityCategory()  {
 
                     ActivityDescription = "Senior’s Golf Tournament",
-                    CreationDate = new DateTime(2017,10,17,8,30,0)
+                    CreationDate = new DateTime(2017,12,02,8,30,0)
                 },
                 new ActivityCategory()  {
 
@@ -138,8 +138,8 @@ namespace ass2.Models
             {
                 new Event()
                 {
-                    EventFromDateTime= new DateTime(2017,10,17,8,30,0),
-                    EventToDateTime = new DateTime(2017,10,17,10,30,0),
+                    EventFromDateTime= new DateTime(2017,12,02,8,30,0),
+                    EventToDateTime = new DateTime(2017,12,02,10,30,0),
                     EnteredByUsername = "someone",
                     CreationDate = new DateTime(2017,10,15,10,30,0),
                     IsActive = true,
@@ -147,16 +147,16 @@ namespace ass2.Models
                  },
                  new Event()
                 {
-                    EventFromDateTime= new DateTime(2017,10,18,8,30,0),
-                    EventToDateTime = new DateTime(2017,10,18,10,30,0),
+                    EventFromDateTime= new DateTime(2017,12,02,8,30,0),
+                    EventToDateTime = new DateTime(2017,12,02,10,30,0),
                     EnteredByUsername = "someone",
                     CreationDate = new DateTime(2017,10,15,10,30,0),
                     IsActive = true,
                     ActivityCategory = context.ActivityCategories.FirstOrDefault(c =>  c.ActivityDescription == "Leadership General Assembly Meeting" )               },
                  new Event()
                 {
-                    EventFromDateTime= new DateTime(2017,10,20,5,30,0),
-                    EventToDateTime = new DateTime(2017,10,20,7,15,0),
+                    EventFromDateTime= new DateTime(2017,12,02,5,30,0),
+                    EventToDateTime = new DateTime(2017,12,02,7,15,0),
                     EnteredByUsername = "someone",
                     CreationDate = new DateTime(2017,10,15,7,15,0),
                     IsActive = true,
@@ -164,8 +164,8 @@ namespace ass2.Models
                  },
                   new Event()
                 {
-                    EventFromDateTime= new DateTime(2017,10,20,7,00,0),
-                    EventToDateTime = new DateTime(2017,10,20,8,00,0),
+                    EventFromDateTime= new DateTime(2017,11,20,7,00,0),
+                    EventToDateTime = new DateTime(2017,11,20,8,00,0),
                     EnteredByUsername = "someone",
                     CreationDate = new DateTime(2017,10,15,8,00,0),
                     IsActive = true,
@@ -173,8 +173,8 @@ namespace ass2.Models
                  },
                    new Event()
                 {
-                    EventFromDateTime= new DateTime(2017,10,21,8,30,0),
-                    EventToDateTime = new DateTime(2017,10,21,10,30,0),
+                    EventFromDateTime= new DateTime(2017,11,21,8,30,0),
+                    EventToDateTime = new DateTime(2017,11,21,10,30,0),
                     EnteredByUsername = "someone",
                     CreationDate = new DateTime(2017,10,15,10,30,0),
                     IsActive = true,
@@ -182,8 +182,8 @@ namespace ass2.Models
                  },
                     new Event()
                 {
-                    EventFromDateTime= new DateTime(2017,10,21,10,30,0),
-                    EventToDateTime = new DateTime(2017,10,21,12,00,0),
+                    EventFromDateTime= new DateTime(2017,11,21,10,30,0),
+                    EventToDateTime = new DateTime(2017,11,21,12,00,0),
                     EnteredByUsername = "someone",
                     CreationDate = new DateTime(2017,10,15,12,00,0),
                     IsActive = true,
@@ -191,8 +191,8 @@ namespace ass2.Models
                  },
                      new Event()
                 {
-                    EventFromDateTime= new DateTime(2017,10,21,12,0,0),
-                    EventToDateTime = new DateTime(2017,10,21,13,30,0),
+                    EventFromDateTime= new DateTime(2017,12,04,12,0,0),
+                    EventToDateTime = new DateTime(2017,12,04,13,30,0),
                     EnteredByUsername = "someone",
                     CreationDate = new DateTime(2017,10,12,13,30,0),
                     IsActive = true,
@@ -200,8 +200,8 @@ namespace ass2.Models
                  },
                       new Event()
                 {
-                    EventFromDateTime= new DateTime(2017,10,22,7,30,0),
-                    EventToDateTime = new DateTime(2017,10,22,8,30,0),
+                    EventFromDateTime= new DateTime(2017,12,04,7,30,0),
+                    EventToDateTime = new DateTime(2017,12,04,8,30,0),
                     EnteredByUsername = "someone",
                     CreationDate = new DateTime(2017,10,12,8,30,0),
                     IsActive = true,
@@ -209,8 +209,8 @@ namespace ass2.Models
                  },
                        new Event()
                 {
-                    EventFromDateTime= new DateTime(2017,10,22,8,30,0),
-                    EventToDateTime = new DateTime(2017,10,22,10,30,0),
+                    EventFromDateTime= new DateTime(2017,12,04,8,30,0),
+                    EventToDateTime = new DateTime(2017,12,04,10,30,0),
                     EnteredByUsername = "someone",
                     CreationDate = new DateTime(2017,10,12,10,30,0),
                     IsActive = true,
@@ -218,8 +218,8 @@ namespace ass2.Models
                  },
                        new Event()
                 {
-                    EventFromDateTime= new DateTime(2017,10,22,8,30,0),
-                    EventToDateTime = new DateTime(2017,10,22,10,30,0),
+                    EventFromDateTime= new DateTime(2017,11,22,8,30,0),
+                    EventToDateTime = new DateTime(2017,11,22,10,30,0),
                     EnteredByUsername = "someone",
                     CreationDate = new DateTime(2017,10,12,10,30,0),
                     IsActive = true,
@@ -227,8 +227,8 @@ namespace ass2.Models
                  },
                          new Event()
                 {
-                    EventFromDateTime= new DateTime(2017,10,22,10,30,0),
-                    EventToDateTime = new DateTime(2017,10,22,12,00,0),
+                    EventFromDateTime= new DateTime(2017,12,05,10,30,0),
+                    EventToDateTime = new DateTime(2017,12,05,12,00,0),
                     EnteredByUsername = "someone",
                     CreationDate = new DateTime(2017,10,12,12,00,0),
                     IsActive = true,
@@ -236,8 +236,8 @@ namespace ass2.Models
                  },
                           new Event()
                 {
-                    EventFromDateTime= new DateTime(2017,10,22,12,0,0),
-                    EventToDateTime = new DateTime(2017,10,22,13,00,0),
+                    EventFromDateTime= new DateTime(2017,12,06,12,0,0),
+                    EventToDateTime = new DateTime(2017,12,06,13,00,0),
                     EnteredByUsername = "someone",
                     CreationDate = new DateTime(2017,10,15,13,00,0),
                     IsActive = true,
@@ -246,8 +246,8 @@ namespace ass2.Models
                  },
                            new Event()
                 {
-                    EventFromDateTime= new DateTime(2017,10,22,13,00,0),
-                    EventToDateTime = new DateTime(2017,10,22,18,00,0),
+                    EventFromDateTime= new DateTime(2017,12,06,13,00,0),
+                    EventToDateTime = new DateTime(2017,12,06,18,00,0),
                     EnteredByUsername = "someone",
                     CreationDate = new DateTime(2017,10,15,18,00,0),
                     IsActive = true,

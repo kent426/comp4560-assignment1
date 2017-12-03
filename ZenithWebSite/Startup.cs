@@ -28,7 +28,7 @@ namespace ass2
         {
 
             services.AddDbContext<ApplicationDbContext>(options =>
-            options.UseSqlite("Data Source=Zenith.db"));
+            options.UseSqlite("Data Source=zenith.db"));
 
             services.AddIdentity<ApplicationUser, IdentityRole>()
                 .AddEntityFrameworkStores<ApplicationDbContext>()
