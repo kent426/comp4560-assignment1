@@ -29,6 +29,8 @@ namespace ass2
                     var userManager = services.GetRequiredService<UserManager<ApplicationUser>>();
                     var roleManager = services.GetRequiredService<RoleManager<IdentityRole>>();
 
+
+                    context.Database.EnsureCreated();
                     var dbInitializerLogger = services.GetRequiredService<ILogger<DbInitializer>>();
                     DbInitializer.Initialize(context, userManager, roleManager, dbInitializerLogger).Wait();
                 }
@@ -44,7 +46,14 @@ namespace ass2
 
         public static IWebHost BuildWebHost(string[] args) =>
             WebHost.CreateDefaultBuilder(args)
-                .UseStartup<Startup>()
-                .Build();
+            //.UseKestrel()
+            //  .UseContentRoot(Directory.GetCurrentDirectory())
+            //  .UseSetting("detailedErrors", "true")
+            //  .UseIISIntegration()
+              .UseStartup<Startup>()
+              
+              .Build();
+                //.UseStartup<Startup>()
+                //.Build();
     }
 }
