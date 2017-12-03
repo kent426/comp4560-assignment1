@@ -30,6 +30,8 @@ namespace ass2
             services.AddDbContext<ApplicationDbContext>(options =>
             options.UseSqlite("Data Source=zenith.db"));
 
+            services.AddCors();
+
             services.AddIdentity<ApplicationUser, IdentityRole>()
                 .AddEntityFrameworkStores<ApplicationDbContext>()
                 .AddDefaultTokenProviders();
@@ -59,12 +61,16 @@ namespace ass2
 
             app.UseAuthentication();
 
+            app.UseCors(builder => builder.AllowAnyOrigin().AllowAnyHeader());
+
             app.UseMvc(routes =>
             {
                 routes.MapRoute(
                     name: "default",
                     template: "{controller=Home}/{action=Index}/{id?}");
             });
+
+            
         }
     }
 }
