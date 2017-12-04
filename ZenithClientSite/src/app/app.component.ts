@@ -24,13 +24,15 @@ export class AppComponent implements OnInit {
   		// alert(this.weekser.toDate);
 	
   	this.thisevents = Array.from(this.weekser.filterEvents(this.events));
+  	this.thisevents.sort(this.comparebyd);
   }
   	//button func
     nextweek() {
   	
   	this.weekser.SetNextWeek();
   	this.thisevents = Array.from(this.weekser.filterEvents(this.events));
-  	alert(this.thisevents);
+  	this.thisevents.sort(this.comparebyd);
+  	//alert(this.thisevents);
   	// alert(this.weekser.fromDate);
   	// alert(this.weekser.toDate);
 
@@ -42,12 +44,33 @@ export class AppComponent implements OnInit {
 
     getEvents():void {
   	this.eventser.getEvents()
-  	.then(es => {this.events = es;this.weekser.SetupThisweek();
-  	this.thisevents = Array.from(this.weekser.filterEvents(this.events));});
+  	.then(es => {this.events = es;
+  		for (var i = 0; i < this.events.length; ++i) {
+  	  		this.events[i].ef = new Date(this.events[i].eventFromDateTime);
+  	  		this.events[i].et = new Date(this.events[i].eventToDateTime);
+  	  }
+  		this.weekser.SetupThisweek();
+  	this.thisevents = Array.from(this.weekser.filterEvents(this.events));
+
+  	this.thisevents.sort(this.comparebyd);
+  		});
   }
+
+  comparebyd(a : Event, b : Event) {
+  	  if (a.ef < b.ef)
+	    return -1;
+	  if (a.ef > b.ef)
+	    return 1;
+	  return 0;
+
+  }
+
+
+
 
   ngOnInit() {
   	this.getEvents();
+
 
   	
   }

@@ -36,9 +36,11 @@ export class EventByWeekService {
   	  console.log(num);
   	 console.log(this.toDate.getTime());
   	for (var i = 0; i < num; ++i) {
-  		console.log(es[i].eventFromDateTime);
-  		if(es[i].eventFromDateTime >= this.fromDate&&
-  			es[i].eventFromDateTime <= this.toDate) {
+  		console.log(es[i].eventFromDateTime.substr(0,10));
+  		var e = new Date(es[i].eventFromDateTime);
+  		if(e.getTime() >= this.fromDate.getTime()&&
+  			e.getTime() <= this.toDate.getTime()) {
+  			console.log("got");
   			this.e.add(es[i]);
 
   		}

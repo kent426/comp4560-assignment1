@@ -2,13 +2,15 @@ import {ActivityCategory} from './activity-category';
 
 export class Event {
 	eventId: string;
-	eventFromDateTime: Date;
-	eventToDateTime: Date;
+	eventFromDateTime: string;
+	eventToDateTime: string;
 	enteredByUsername: string;
 	creationDate: string;
 	isActive: string;
 	activityCategory: ActivityCategory;
 	activityCategoryId: string;
 	avtivityDes:string;
+	ef:Date;
+	et:Date;
 
 }
