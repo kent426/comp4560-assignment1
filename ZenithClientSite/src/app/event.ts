@@ -10,5 +10,7 @@ export class Event {
 	activityCategory: ActivityCategory;
 	activityCategoryId: string;
 	avtivityDes:string;
+	ef:Date;
+	et:Date;
 
 }
