@@ -30,7 +30,7 @@ export class AppComponent implements OnInit {
   	
   	this.weekser.SetNextWeek();
   	this.thisevents = Array.from(this.weekser.filterEvents(this.events));
-  	alert(this.thisevents);
+  	//alert(this.thisevents);
   	// alert(this.weekser.fromDate);
   	// alert(this.weekser.toDate);
 
