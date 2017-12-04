@@ -38,7 +38,7 @@ namespace ass2.Controllers
                 return BadRequest(ModelState);
             }
 
-            var @event = await _context.Events.SingleOrDefaultAsync(m => m.EventId == id);
+            var @event = await _context.Events.Include(e => e.ActivityCategory).SingleOrDefaultAsync(m => m.EventId == id);
 
             if (@event == null)
             {

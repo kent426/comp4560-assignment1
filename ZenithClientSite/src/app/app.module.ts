@@ -4,6 +4,7 @@ import { FormsModule} from '@angular/forms';
 
 
 import { AppComponent } from './app.component';
+import { MomentModule } from 'angular2-moment';
 
 
 import { HttpModule } from '@angular/http';
@@ -15,6 +16,7 @@ import { HttpModule } from '@angular/http';
   imports: [
     BrowserModule,
     FormsModule,
+    MomentModule,
         HttpModule,
   ],
   providers: [],

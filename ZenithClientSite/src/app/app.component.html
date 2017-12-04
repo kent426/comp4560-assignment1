@@ -1,6 +1,11 @@
+
 <div>
 	<h1> Here are the Evnets</h1>
+			<button type="button" class="btn .btn-primary" (click)="preweek()" style="float:">< Previous week</button>
+
+			<button type="button" (click)="nextweek()" class="btn .btn-primary" href="#" style="float: right;">Next week</button>
 	<table border="1" class="table">
+
 		<thead>
 			<tr>
 		<th>eventFromDateTime</th>
@@ -19,4 +24,7 @@
 
 	</table>
 </div>
+
+
+Last updated: {{myDate | amTimeAgo}}
 
